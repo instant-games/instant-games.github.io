@@ -24,7 +24,7 @@ body {
     margin: 0;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ff6f61; /* Accent color */
+    color: #6193ff; /* Accent color */
   }
   
   header p {
@@ -101,7 +101,7 @@ body {
   .game-card h2 {
     margin: 10px 0 0;
     font-size: 1.5rem;
-    color: #ff6f61; /* Accent color */
+    color: #6193ff; /* Accent color */
   }
   
   /* Game Subpage Styles */
@@ -139,7 +139,7 @@ body {
   }
   
   .fullscreen-button {
-    background-color: #ff6f61; /* Accent color */
+    background-color: #6193ff; /* Accent color */
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -151,5 +151,5 @@ body {
   }
   
   .fullscreen-button:hover {
-    background-color: #ff4a3d; /* Darker accent color */
+    background-color: #6193ff; /* Darker accent color */
   }
