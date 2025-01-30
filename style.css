@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e2f; /* Dark background */
+    color: #ffffff; /* White text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #2a2a40; /* Dark header */
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6f61; /* Accent color */
+  }
+  
+  header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+    color: #a1a1a1; /* Light gray */
+  }
+  
+  main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    flex: 1; /* Allow main to grow and fill available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #2a2a40; /* Dark footer */
+    color: #a1a1a1; /* Light gray */
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Main Page Styles (Cards) */
+  .game-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .game-card {
+    background-color: #2a2a40; /* Dark card background */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .game-card a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .game-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .game-card h2 {
+    margin: 10px 0 0;
+    font-size: 1.5rem;
+    color: #ff6f61; /* Accent color */
+  }
+  
+  /* Game Subpage Styles */
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a40; /* Dark frame background */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto; /* Center horizontally */
+    height: 80vh; /* Adjust height to fit the screen */
+  }
+  
+  .game-frame {
+    width: 100%;
+    height: 100%; /* Fill the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e2f; /* Darker background for contrast */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .fullscreen-button {
+    background-color: #ff6f61; /* Accent color */
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .fullscreen-button:hover {
+    background-color: #ff4a3d; /* Darker accent color */
+  }

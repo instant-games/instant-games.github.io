@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 - Instant Games</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>2048</h1>
+    <p><a href="../index.html">Back to Home</a></p>
+  </header>
+
+  <main>
+    <div class="game-container">
+      <div class="game-frame">
+        <iframe id="game-iframe" src="https://www.gamefiber.com/content/html5/game/2048/index.html"></iframe>
+      </div>
+      <button class="fullscreen-button" onclick="toggleFullscreen()">Full Screen</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Instant Games. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleFullscreen() {
+      const iframe = document.getElementById('game-iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { /* Firefox */
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari, and Opera */
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+        iframe.msRequestFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>
