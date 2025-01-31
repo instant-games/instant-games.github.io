@@ -44,7 +44,7 @@ header {
 }
 
 header h1 {
-  margin: 20px;
+  margin: 10px;
   font-size: 2.5rem;
   font-weight: bold;
   color: #6193ff; /* Accent color */
@@ -54,7 +54,7 @@ header h1 {
 }
 
 header p {
-  margin: 20px 0 0;
+  margin: 0;
   font-size: 1.2rem;
   color: #a1a1a1; /* Light gray */
   animation: fadeIn 2s ease-in-out;
@@ -62,7 +62,7 @@ header p {
 }
 
 main {
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   max-width: 1200px;
   flex: 1; /* Allow main to grow and fill available space */
