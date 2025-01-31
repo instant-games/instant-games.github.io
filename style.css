@@ -153,3 +153,82 @@ body {
   .fullscreen-button:hover {
     background-color: #6193ff; /* Darker accent color */
   }
+
+/* Game Subpage Styles with Sidebars */
+.game-container-with-sidebars {
+  display: flex;
+  justify-content: space-between; /* Space for sidebars and game */
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  padding: 0 10px; /* Add some padding for sidebars */
+  box-sizing: border-box;
+}
+
+/* Sidebars for Ads */
+.sidebar {
+  width: 150px; /* Width of the sidebars */
+  height: 100vh; /* Full screen height */
+  background-color: #2a2a40; /* Dark background for sidebars */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a1a1a1; /* Light gray text */
+}
+
+/* Game Frame */
+.game-frame-with-sidebars {
+  flex: 1; /* Take up remaining space */
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e2f; /* Darker background for contrast */
+  overflow: hidden;
+}
+
+/* Full-Screen Button */
+.fullscreen-button-with-sidebars {
+  background-color: #6193ff; /* Accent color */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+  position: fixed; /* Position the button */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Center the button */
+}
+
+.fullscreen-button-with-sidebars:hover {
+  background-color: #4a7dff; /* Darker accent color */
+}
+
+/* Ad Card Styles */
+.ad-card {
+  background-color: #2a2a40; /* Dark card background */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ad-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px; /* Match the height of game cards */
+  color: #a1a1a1; /* Light gray text */
+}
