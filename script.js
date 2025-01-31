@@ -70,3 +70,33 @@ function loadGapi() {
   } else {
     self.addEventListener('load', loadGapi);
   }
+
+// Function to show the info modal
+function showInfo() {
+  document.getElementById('info-modal').style.display = 'flex'; // Use 'flex' for centering
+}
+
+// Function to hide the info modal
+function hideInfo() {
+  document.getElementById('info-modal').style.display = 'none';
+}
+
+// Close the modal if the user clicks outside of it
+window.onclick = function(event) {
+  const modal = document.getElementById('info-modal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
+console.log("Page loaded"); // Check if this appears in the console when the page loads
+
+function showInfo() {
+  console.log("Info button clicked"); // Check if this appears when you click the info button
+  document.getElementById('info-modal').style.display = 'flex';
+}
+
+function hideInfo() {
+  console.log("Modal closed"); // Check if this appears when you close the modal
+  document.getElementById('info-modal').style.display = 'none';
+}
