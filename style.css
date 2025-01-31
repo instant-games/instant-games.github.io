@@ -9,6 +9,17 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  opacity: 0; /* Start with opacity 0 for fade-in effect */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 header {
@@ -18,20 +29,36 @@ header {
   text-align: center;
   width: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.8s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 header h1 {
-  margin: 0;
+  margin: 20px;
   font-size: 2.5rem;
   font-weight: bold;
   color: #6193ff; /* Accent color */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease-in-out;
+  padding: 10px 0; /* Padding for the heading */
 }
 
 header p {
-  margin: 10px 0 0;
+  margin: 20px 0 0;
   font-size: 1.2rem;
   color: #a1a1a1; /* Light gray */
+  animation: fadeIn 2s ease-in-out;
+  padding: 5px 0; /* Padding for the paragraph */
 }
 
 main {
@@ -43,6 +70,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Footer */
@@ -54,6 +82,18 @@ footer {
   width: 100%;
   margin-top: auto; /* Push footer to the bottom */
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Main Page Styles (Cards) */
@@ -71,11 +111,29 @@ footer {
   text-align: center;
   width: 200px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.game-card:nth-child(1) { animation-delay: 0.2s; }
+.game-card:nth-child(2) { animation-delay: 0.4s; }
+.game-card:nth-child(3) { animation-delay: 0.6s; }
+.game-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -90,6 +148,7 @@ footer {
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 
 .game-image img {
@@ -97,6 +156,11 @@ footer {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.1);
 }
 
 .game-card h2 {
@@ -120,6 +184,7 @@ footer {
   max-width: 800px;
   margin: 0 auto; /* Center horizontally */
   height: 80vh; /* Adjust height to fit the screen */
+  animation: fadeIn 1s ease-in-out;
 }
 
 .game-frame {
@@ -149,7 +214,7 @@ iframe {
   font-size: 1rem;
   cursor: pointer;
   margin-top: 20px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fullscreen-button:hover {
@@ -178,6 +243,18 @@ iframe {
   align-items: center;
   justify-content: center;
   color: #a1a1a1; /* Light gray text */
+  animation: fadeInLeft 0.8s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Game Frame */
@@ -201,7 +278,7 @@ iframe {
   font-size: 1rem;
   cursor: pointer;
   margin-top: 20px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: fixed; /* Position the button */
   bottom: 20px;
   left: 50%;
@@ -221,7 +298,7 @@ iframe {
   text-align: center;
   width: 200px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ad-card:hover {
@@ -237,7 +314,7 @@ iframe {
   color: #a1a1a1; /* Light gray text */
 }
 
-/* Info Button Styles */
+/* Info Button */
 .info-button {
   position: absolute;
   top: 20px;
@@ -254,94 +331,39 @@ iframe {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s;
-}
-
-.info-button:hover {
-  background-color: #4a7dff; /* Darker accent color */
-}
-
-/* Info Button */
-.info-button {
-  background: none;
-  border: none;
-  color: #6193ff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  transition: color 0.3s;
-}
-
-.info-button:hover {
-  color: #4a7dff;
-}
-
-/* Info Button */
-.info-button {
-  background: none;
-  border: none;
-  color: #6193ff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  transition: color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   text-decoration: none; /* Remove underline */
 }
 
 .info-button:hover {
-  color: #4a7dff;
+  background-color: #4a7dff; /* Darker accent color */
+  transform: scale(1.1);
 }
 
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
-}
-
-header {
-  background: linear-gradient(135deg, #2a2a40, #3a3a5a);
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: #6193ff;
-}
-
+/* Back Button */
 .back-button {
-  background: none;
+  background-color: #6193ff;
+  color: #ffffff;
   border: none;
-  color: #6193ff;
+  border-radius: 25px;
+  padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
 }
 
 .back-button:hover {
-  color: #4a7dff;
+  background-color: #4a7dff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-main {
-  flex: 1; /* Allow main to grow and fill available space */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* About Message */
@@ -353,6 +375,7 @@ main {
   background-color: #2a2a40;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .about-message h2 {
@@ -373,8 +396,9 @@ main {
   width: 300px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 20px 0;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
 .developer-card:hover {
@@ -398,65 +422,4 @@ main {
 .developer-card .role {
   color: #a1a1a1;
   font-size: 0.9rem;
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(135deg, #2a2a40, #3a3a5a);
-  color: #a1a1a1;
-  text-align: center;
-  padding: 15px;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
-  margin-top: auto; /* Push footer to the bottom */
-}
-
-/* Header */
-header {
-  background: linear-gradient(135deg, #2a2a40, #3a3a5a);
-  color: #ffffff;
-  padding: 20px; /* Adjust padding as needed */
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Adds space between child elements */
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: #6193ff;
-}
-
-header p {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #a1a1a1;
-}
-
-/* Back Button */
-.back-button {
-  background-color: #6193ff;
-  color: #ffffff;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin-top: 20px; /* Adds space above the button */
-}
-
-.back-button:hover {
-  background-color: #4a7dff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
-
-.back-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
