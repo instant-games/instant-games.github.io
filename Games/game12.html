@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volley Random - Instant Games</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6376437570074508"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Volley Random</h1>
+    <a href="../index.html" class="back-button">&#8592; Back to Home</a>
+    <a href="../info.html" class="info-button">&#9432;</a>
+  </header>
+
+  <main>
+    <div class="game-container">
+      <div class="game-frame">
+        <iframe id="game-iframe" src="https://files.twoplayergames.org/files/games/o1/Volley_random/index.html"></iframe>
+      </div>
+      <button class="fullscreen-button" onclick="toggleFullscreen()">Full Screen</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Instant Games. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleFullscreen() {
+      const iframe = document.getElementById('game-iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { /* Firefox */
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari, and Opera */
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+        iframe.msRequestFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>
