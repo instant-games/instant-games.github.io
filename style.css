@@ -1,155 +1,438 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1e1e2f; /* Dark background */
-    color: #ffffff; /* White text */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40); /* Gradient background */
+  color: #ffffff; /* White text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  opacity: 0; /* Start with opacity 0 for fade-in effect */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  header {
-    background-color: #2a2a40; /* Dark header */
-    color: #ffffff;
-    padding: 30px 20px;
-    text-align: center;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  to {
+    opacity: 1;
   }
-  
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #6193ff; /* Accent color */
+}
+
+header {
+  background: linear-gradient(135deg, #2a2a40, #3a3a5a); /* Gradient header */
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.8s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  
-  header p {
-    margin: 10px 0 0;
-    font-size: 1.2rem;
-    color: #a1a1a1; /* Light gray */
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  main {
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    flex: 1; /* Allow main to grow and fill available space */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+}
+
+header h1 {
+  margin: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #6193ff; /* Accent color */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease-in-out;
+  padding: 10px 0; /* Padding for the heading */
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #a1a1a1; /* Light gray */
+  animation: fadeIn 2s ease-in-out;
+  padding: 5px 0; /* Padding for the paragraph */
+}
+
+main {
+  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+  flex: 1; /* Allow main to grow and fill available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #2a2a40, #3a3a5a); /* Gradient footer */
+  color: #a1a1a1; /* Light gray */
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  margin-top: auto; /* Push footer to the bottom */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
   }
-  
-  /* Footer */
-  footer {
-    background-color: #2a2a40; /* Dark footer */
-    color: #a1a1a1; /* Light gray */
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-    margin-top: auto; /* Push footer to the bottom */
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  /* Main Page Styles (Cards) */
-  .game-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+}
+
+/* Main Page Styles (Cards) */
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.game-card {
+  background: linear-gradient(135deg, #2a2a40, #3a3a5a); /* Gradient card background */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.game-card:nth-child(1) { animation-delay: 0.2s; }
+.game-card:nth-child(2) { animation-delay: 0.4s; }
+.game-card:nth-child(3) { animation-delay: 0.6s; }
+.game-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
   }
-  
-  .game-card {
-    background-color: #2a2a40; /* Dark card background */
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.1);
+}
+
+.game-card h2 {
+  margin: 10px 0 0;
+  font-size: 1.5rem;
+  color: #6193ff; /* Accent color */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Subpage Styles */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2a2a40, #3a3a5a); /* Gradient frame background */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto; /* Center horizontally */
+  height: 80vh; /* Adjust height to fit the screen */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.game-frame {
+  width: 100%;
+  height: 100%; /* Fill the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40); /* Gradient background for contrast */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.fullscreen-button {
+  background: linear-gradient(135deg, #6193ff, #4a7dff); /* Gradient button */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fullscreen-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Subpage Styles with Sidebars */
+.game-container-with-sidebars {
+  display: flex;
+  justify-content: space-between; /* Space for sidebars and game */
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  padding: 0 10px; /* Add some padding for sidebars */
+  box-sizing: border-box;
+}
+
+/* Sidebars for Ads */
+.sidebar {
+  width: 150px; /* Width of the sidebars */
+  height: 100vh; /* Full screen height */
+  background: linear-gradient(135deg, #2a2a40, #3a3a5a); /* Gradient sidebar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a1a1a1; /* Light gray text */
+  animation: fadeInLeft 0.8s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  .game-card a {
-    text-decoration: none;
-    color: inherit;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .game-image {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .game-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .game-card h2 {
-    margin: 10px 0 0;
-    font-size: 1.5rem;
-    color: #6193ff; /* Accent color */
-  }
-  
-  /* Game Subpage Styles */
-  .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #2a2a40; /* Dark frame background */
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto; /* Center horizontally */
-    height: 80vh; /* Adjust height to fit the screen */
-  }
-  
-  .game-frame {
-    width: 100%;
-    height: 100%; /* Fill the container */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1e1e2f; /* Darker background for contrast */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  iframe {
-    border: none;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .fullscreen-button {
-    background-color: #6193ff; /* Accent color */
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-  }
-  
-  .fullscreen-button:hover {
-    background-color: #6193ff; /* Darker accent color */
-  }
+}
+
+/* Game Frame */
+.game-frame-with-sidebars {
+  flex: 1; /* Take up remaining space */
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40); /* Gradient background for contrast */
+  overflow: hidden;
+}
+
+/* Full-Screen Button */
+.fullscreen-button-with-sidebars {
+  background: linear-gradient(135deg, #6193ff, #4a7dff); /* Gradient button */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: fixed; /* Position the button */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Center the button */
+}
+
+.fullscreen-button-with-sidebars:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ad Card Styles */
+.ad-card {
+  background: linear-gradient(135deg, #2a2a40, #3a3a5a); /* Gradient card background */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ad-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px; /* Match the height of game cards */
+  color: #a1a1a1; /* Light gray text */
+}
+
+/* Info Button */
+.info-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #6193ff; /* Accent color */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none; /* Remove underline */
+}
+
+.info-button:hover {
+  background-color: #4a7dff; /* Darker accent color */
+  transform: scale(1.1);
+}
+
+/* Back Button */
+.back-button {
+  background-color: #6193ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background-color: #4a7dff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* About Message */
+.about-message {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #2a2a40;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-message h2 {
+  color: #6193ff;
+  margin-bottom: 10px;
+}
+
+.about-message p {
+  color: #a1a1a1;
+  font-size: 1.1rem;
+}
+
+/* Developer Card */
+.developer-card {
+  background: linear-gradient(135deg, #2a2a40, #3a3a5a);
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px 0;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.developer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.developer-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.developer-card h3 {
+  color: #6193ff;
+  margin: 10px 0 5px;
+}
+
+.developer-card .role {
+  color: #a1a1a1;
+  font-size: 0.9rem;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Images/siteimage.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Adjust blur intensity */
+  z-index: -1; /* Place the background behind the content */
+}
