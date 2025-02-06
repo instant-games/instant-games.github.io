@@ -16,6 +16,11 @@
     <div class="header-content">
       <h1>Instant Games</h1>
       <p>Play your favorite unblocked games instantly!</p>
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search games...">
+        <button id="search-button">Search</button>
+      </div>
       <a href="info.html" class="info-button">&#9432;</a>
     </div>
   </header>
@@ -155,5 +160,23 @@
   <footer>
     <p>&copy; 2025 Instant Games. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById('search-button').addEventListener('click', function() {
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const games = document.querySelectorAll('.game-card h2');
+
+      games.forEach(game => {
+        const gameName = game.textContent.toLowerCase();
+        const gameCard = game.closest('.game-card');
+
+        if (gameName.includes(searchTerm)) {
+          gameCard.style.display = 'block';
+        } else {
+          gameCard.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -120,6 +120,10 @@ footer {
 .game-card:nth-child(2) { animation-delay: 0.4s; }
 .game-card:nth-child(3) { animation-delay: 0.6s; }
 .game-card:nth-child(4) { animation-delay: 0.8s; }
+.game-card:nth-child(5) { animation-delay: 0.2s; }
+.game-card:nth-child(6) { animation-delay: 0.4s; }
+.game-card:nth-child(7) { animation-delay: 0.6s; }
+.game-card:nth-child(8) { animation-delay: 0.8s; }
 
 @keyframes fadeInUp {
   from {
@@ -435,4 +439,31 @@ iframe {
   background-position: center;
   filter: blur(10px); /* Adjust blur intensity */
   z-index: -1; /* Place the background behind the content */
+}
+
+.search-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#search-bar {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  background-color: #6193ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #0056b3;
 }
